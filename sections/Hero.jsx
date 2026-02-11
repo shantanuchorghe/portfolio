@@ -1,4 +1,4 @@
-import { ArrowRight, Download, X, Github, Linkedin } from "lucide-react";
+import { ArrowRight,ChevronDown, Download, X, Github, Linkedin } from "lucide-react";
 import { Button } from "../components/Button";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -132,7 +132,7 @@ export const Hero = () => {
                 {/* floating badge*/}
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-2 bg-green-500 rounded-full animate-pulse " />
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse " />
                     <span className="text-sm font-medium">
                       Availble for work
                     </span>
@@ -141,14 +141,39 @@ export const Hero = () => {
                 {/* stats badge */}
               </div>
             </div>
-          </div>         
-        </div>
-         <div>Technolgies I work with</div>
-          <div className="flex shrink-0">
-            {[...skills, ...skills].map((skil, ind) => (
-              <span key={ind}>{skil} </span>
-            ))}
           </div>
+        </div>
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            I work with this technologies
+          </p>
+          <div className="relative  overflow-hidden   ">
+             <div
+              className="absolute left-0 top-0 bottom-0 w-32
+             bg-gradient-to-r from-background to-transparent z-10"
+            />
+            <div
+              className="absolute right-0 top-0 bottom-0 w-32
+             bg-gradient-to-l from-background to-transparent z-10"
+            />
+            <div className=" flex animate-marquee ">
+            {[...skills, ...skills].map((skill, ind) => (
+              <div key={ind} className="px-8 py-4  flex shrink-0 ">
+                  <span key={ind} className=" text-xl  font-semibold  text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                  {skill}
+                  </span>
+              </div>
+            ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <a href="#about"
+         className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+        <ChevronDown className="w-6 h-6 animate-bounce"></ChevronDown>
+        </a>
       </div>
     </section>
   );
