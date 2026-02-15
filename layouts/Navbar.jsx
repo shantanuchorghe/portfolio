@@ -1,14 +1,14 @@
-'use client'
-
+"use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "../components/Button";
 import { Menu, X } from "lucide-react";
 
 const navlinks = [
-  { href: "about", label: "About" },
-  { href: "projects", label: "Projects" },
-  { href: "experience", label: "Experience" },
-  { href: "testimonials", label: "Testimonials" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contactus", label: "Contact" },
+,
 ];
 
 export const Navbar = () => {
@@ -25,7 +25,8 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
+    <header
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
         isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
       }  z-50`}
     >
@@ -40,13 +41,14 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navlinks.map((link, index) => (
-              <a
+              <Link
+              scroll={true}
                 href={link.href}
                 key={index}
                 className="px-4 py-2 text-muted-foreground text-sm hover:text-foreground hover:bg-surface rounded-full"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -65,7 +67,7 @@ export const Navbar = () => {
       {/* {Mobile menu} */}
       {isMobileMenuOpen && (
         <div className="md:hidden glass-strong animate-fade-in">
-          <div  className="container mx-auto px-6 py-6 flex flex-col gap-4">
+          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navlinks.map((element, index) => (
               <a
                 href={element.href}

@@ -1,5 +1,5 @@
 import { Link, ArrowUpRight, Github } from "lucide-react";
-import { AnimatedBorderButton } from './../components/AnimatedBorderButton';
+import { AnimatedBorderButton } from "./../components/AnimatedBorderButton";
 
 const Projects = [
   {
@@ -34,7 +34,7 @@ const Projects = [
 
 export const Project = () => {
   return (
-    <section className="py-32 relative overflow-hidden ">
+    <section id="projects" className="py-32 relative overflow-hidden ">
       <div className="contaniner mx-auto px-6 realtive z-10">
         {/* section header */}
         <div className="uppercase text-center text-sm  text-secondary-foreground">
@@ -105,44 +105,39 @@ export const Project = () => {
                       </p>
                     </div>
                     <div>
-                      <a href={item.link}
-                      >
-
-                      <ArrowUpRight 
-                      className="text-muted-foreground w-5 h-5
+                      <a href={item.link}>
+                        <ArrowUpRight
+                          className="text-muted-foreground w-5 h-5
                       group-hover:translate-x-1
-                      group-hover:-translate-y-1 transition-all"/>
+                      group-hover:-translate-y-1 transition-all"
+                        />
                       </a>
-
-                      
                     </div>
-                 
                   </div>
                   <div className="flex gap-4">
-
-                     {item.tags.map((tag,tid)=>(
-                       <div
-                       className="glass rounded-full px-4 py-1.5 text-xs bg-surface font-medium border border-border/50  text-muted-foreground
+                    {item.tags.map((tag, tid) => (
+                      <div
+                        key={tid}
+                        className="glass rounded-full px-4 py-1.5 text-xs bg-surface font-medium border border-border/50  text-muted-foreground
                         hover:border-primary/50
                          hover:text-primary
                          transition-all duration-300
                          "
-                       
-                       >{tag}</div>
-                      ))}
+                      >
+                        {tag}
+                      </div>
+                    ))}
                   </div>
-
                 </div>
               </div>
             ))}
           </div>
         </div>
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-        
-            <AnimatedBorderButton>
-               View All projects
-                 <ArrowUpRight className="w-5 h-5" />
-            </AnimatedBorderButton>
+          <AnimatedBorderButton>
+            View All projects
+            <ArrowUpRight className="w-5 h-5" />
+          </AnimatedBorderButton>
         </div>
       </div>
     </section>

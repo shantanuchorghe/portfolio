@@ -25,7 +25,7 @@ const qualties = [
 
 export const About = () => {
   return (
-    <section className="relative overflow-hidden py-32">
+    <section id="about" className="relative overflow-hidden py-32">
       <div className="container px-6 relative z-10 m-auto ">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* left column */}
