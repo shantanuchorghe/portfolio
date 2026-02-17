@@ -104,13 +104,13 @@ export const Hero = () => {
             <div className="flex items-center gap-2.5 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me</span>
               {[
-                { social: Github },
-                { social: Linkedin },
-                { social: FaXTwitter },
+                { social: Github , href:'https://github.com/shantanuchorghe'},
+                { social: Linkedin ,href: 'https://www.linkedin.com/in/shantanu-chorghe-7989ba263' },
+                { social: FaXTwitter , href: 'https:/x.com/shantanu_verse'},
               ].map((ele, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={ele.href}
                   className="p-2 glass text-white hover:bg-primary/10 hover:text-primary rounded-full "
                 >
                   {<ele.social className="w-5 h-5" />}{" "}
@@ -125,7 +125,7 @@ export const Hero = () => {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse " />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/profile-photo.jpg"
+                  src="/profile-photo.png"
                   alt="ProfilePic"
                   className="w-full aspect-[4/5] object-cover rounded-2xl "
                 />
