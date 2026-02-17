@@ -19,7 +19,7 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="flex space-x-120 items-center py-10 border-t border-border">
+      <div className="flex space-x-120 items-center py-10 border-t border-border max-w-full">
         <div className="text-xl font-bold tracking-tight hover:text-primary p-5">SC</div>
         <div className=" rounded-full px-2 py-1 flex items-center gap-1">
           {navlinks.map((link, index) => (
